@@ -20,6 +20,7 @@
       :messages="messages"
       :participants="participants"
       :show-typing-indicator="showTypingIndicator"
+      :live-message="liveMessage"
       :colors="colors"
       :always-scroll-to-bottom="alwaysScrollToBottom"
       :show-edition="showEdition"
@@ -128,6 +129,9 @@ export default {
     showTypingIndicator: {
       type: String,
       required: true
+    },
+    liveMessage: {
+      type: String
     },
     colors: {
       type: Object,

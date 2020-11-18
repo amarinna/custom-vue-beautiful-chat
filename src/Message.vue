@@ -50,7 +50,11 @@
         :data="message.data"
         :message-colors="messageColors"
       />
-      <TypingMessage v-else-if="message.type === 'typing'" :message-colors="messageColors" />
+      <TypingMessage
+        v-else-if="message.type === 'typing'"
+        :live-message="liveMessage"
+        :message-colors="messageColors"
+      />
       <SystemMessage
         v-else-if="message.type === 'system'"
         :data="message.data"
@@ -83,6 +87,9 @@ export default {
     message: {
       type: Object,
       required: true
+    },
+    liveMessage: {
+      type: String
     },
     colors: {
       type: Object,

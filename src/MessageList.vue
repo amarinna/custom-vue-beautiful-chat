@@ -40,6 +40,7 @@
     <Message
       v-show="showTypingIndicator !== ''"
       :message="{author: showTypingIndicator, type: 'typing'}"
+      :live-message="liveMessage"
       :user="profile(showTypingIndicator)"
       :colors="colors"
       :message-styling="messageStyling"
@@ -69,6 +70,9 @@ export default {
     showTypingIndicator: {
       type: String,
       required: true
+    },
+    liveMessage: {
+      type: String
     },
     colors: {
       type: Object,
