@@ -1,5 +1,8 @@
 <template>
-  <div class="sc-typing-indicator" :style="messageColors">
+  <div v-if="liveMessage" class="sc-live-message-indicator" :style="messageColors">
+    <p>{{ liveMessage }}</p>
+  </div>
+  <div v-else class="sc-typing-indicator" :style="messageColors">
     <span></span>
     <span></span>
     <span></span>
@@ -12,12 +15,26 @@ export default {
     messageColors: {
       type: Object,
       required: true
+    },
+    liveMessage: {
+      type: String
     }
   }
 }
 </script>
 
 <style scoped>
+.sc-live-message-indicator {
+  border-radius: 6px;
+  padding: 5px 20px;
+}
+
+.sc-live-message-indicator p {
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
 .sc-typing-indicator {
   text-align: center;
   padding: 17px 20px;
